@@ -16,7 +16,7 @@ class Home extends React.Component {
   // Fetch the data from An External API
   componentDidMount() {
     axios
-      .get("http://localhost:5000/exercises")
+      .get("http://localhost:8000/exercises")
       .then((response) => {
         this.setState({ exercises: response.data });
       })
@@ -37,7 +37,7 @@ class Home extends React.Component {
 
   handleDelete(id) {
     axios
-      .delete(`http://localhost:5000/exercises/${id}`)
+      .delete(`http://localhost:8000/exercises/${id}`)
       .then((response) => {
         this.setState({
           exercises: [...this.state.exercises].filter(
